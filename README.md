@@ -35,7 +35,7 @@ git clone https://github.com/kokoichi206/search-save.git
 - `google.com`における検索結果を`localstorage`に保存する。
 - 右クリックで、拡張機能に基づいた何かしらのページに飛べるようにはなっている
 
-![](assets/contentmenue.png)
+![](assets/contentmenu.png)
 
 ### 最終的にやりたいこと
 検索した履歴を保存する拡張機能
