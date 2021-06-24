@@ -14,21 +14,31 @@ if( queries.length > 1 ){
     // });
 
     const key = "searchWords"
-    chrome.storage.sync.get(/* String or Array */[key], function(items){
-        //  items = [ { "yourBody": "myBody" } ]
-        let nweArray;
-        console.log(items);
-        if( items == {} ){
-            console.log(here);
-            let array = JSON.parse(items);
-            console.log(array);
-            nweArray = array.push(rawQuery);
-        } else {
-            nweArray = [rawQuery];
-        }
+    let items = localStorage[`${key}`];
+    let array;
+    if( items ){
+        array = JSON.parse(items);
+        array.push(rawQuery);
+    } else {
+        array = [rawQuery];
+    }
+    localStorage[`${key}`] = JSON.stringify(array);
+    console.log('Value is set to ' + JSON.stringify(array));
+    // chrome.storage.sync.get(/* String or Array */[key], function(items){
+    //     //  items = [ { "yourBody": "myBody" } ]
+    //     let newArray;
+    //     console.log(items);
+    //     if( items == {} ){
+    //         console.log(here);
+    //         let array = JSON.parse(items);
+    //         console.log(array);
+    //         newArray = array.push(rawQuery);
+    //     } else {
+    //         newArray = [rawQuery];
+    //     }
 
-        chrome.storage.sync.set({key: JSON.stringify(nweArray)}, function() {
-            console.log('Value is set to ' + nweArray);
-        });
-    });
+    //     chrome.storage.sync.set({key: JSON.stringify(newArray)}, function() {
+    //         console.log('Value is set to ' + newArray);
+    //     });
+    // });
 }
