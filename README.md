@@ -32,5 +32,10 @@ git clone https://github.com/kokoichi206/search-save.git
 `google.com`以下のURLの背景が一様に変わります
 
 ## src_save
-`google.com`における検索結果を`localstorage`に保存する。
+- `google.com`における検索結果を`localstorage`に保存する。
+- 右クリックで、拡張機能に基づいた何かしらのページに飛べるようにはなっている
 
+![](assets/contentmenue.png)
+
+### 最終的にやりたいこと
+検索した履歴を保存する拡張機能
